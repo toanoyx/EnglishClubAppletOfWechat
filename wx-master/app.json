@@ -1,0 +1,30 @@
+{
+  "pages": [
+    "pages/homeSuper/homeSuper",
+    "pages/homeNormal/homeNormal",
+    "pages/manage/manage",
+    "pages/manageDayItem/manageDayItem",
+    "pages/articleList/articleList",
+    "pages/articleDetail/articleDetail",
+    "pages/newDate/newDate",
+    "pages/checkin/checkin",
+    "pages/note_editor/note_editor",
+    "pages/note_index/note_index",
+    "pages/note_logs/note_logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#63065f",
+    "navigationBarTitleText": "南大英语晨读",
+    "backgroundColor": "#f8f8f8",
+    "navigationBarTextStyle": "white"
+  },
+  "netWorkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
+}

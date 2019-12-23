@@ -1,0 +1,4 @@
+/* pages/manageDayItem/manageDayItem.wxss */
+.uploadButton{
+    background: lightblue;
+}

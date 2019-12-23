@@ -1,0 +1,105 @@
+<!--pages/pictruesign/pictrue.wxml-->
+<view class='gs_banner'>
+    <!--image src='image/logo1.png'></image-->
+    <view class='gs_continue'>
+        <view>总共签到 <text>{{checkincount}}</text>天</view>
+    </view>
+</view> 
+<view class='gs_sign'>
+    <view class='gs_sign_box'>
+        <view class='gs_pillar'>
+            <view class='gs_post'>
+                <view></view>
+            </view>
+            <view class='gs_post'>
+                <view></view>
+            </view>
+            <view class='gs_post'>
+                <view></view>
+            </view>
+            <view class='gs_post'>
+                <view></view>
+            </view>
+            <view class='gs_post'>
+                <view></view>
+            </view>
+            
+        </view>
+        <view class='gs_sign_day'>
+            <image bindtap='onshow' src='image/rili.png'></image>
+            <view>查看打卡记录</view>
+        </view>
+        <view class='gs_sign_content'>
+            <view class='gs_week'>
+                <block wx:for="{{week}}" wx:key="index">
+                    <view class='gs_wook'>
+                        <view style='width: {{ sysW }}px; height: {{ sysW }}px; line-height: {{ sysW }}px;'>{{item.wook}}</view>
+                    </view>
+                </block>
+            </view>
+            <view class='gs_week'>
+                <block wx:for="{{day}}" wx:key="index">
+                    <view class='gs_wook' style='width: {{ sysW }}px; height: {{ sysW }}px; line-height: {{ sysW }}px;'>
+                        <view  class="{{ item.wook ==  getDate ? 'dateOn' : ''}}}">{{item.wook}}</view>
+                        <view class='gs_clocksucceed' wx:if="{{item.src}}"><image src='{{item.src}}'></image></view>
+                    </view>
+                </block>
+            </view>
+            <view class='pssw' wx:if="{{admin==2 || admin==3}}">
+              <text>{{password_info}}</text>
+            </view>
+            <view class='pssw' wx:if="{{admin==1}}">
+              <view class="section" style='display:{{display ==  "none" ? "block" : "none"}}'>
+                <input class="input" type="text" placeholder="请输入打卡密码" bindinput="passWdInput"/>
+              </view>
+            </view>
+            <view class='gs_circle'>
+                <view class='gs_incircle'>
+                    <view class='gs_excircle'>
+                        <view class='gs_innercircle'>
+                            <view class='gs_btn' bindtap="ondaka">
+                                <text wx:if="{{admin==1}}">打卡</text>
+                                <text wx:if="{{admin==2 || admin==3}}">今日密码</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class='gs_calendar' style='display:{{display}}'>
+    <view class='gs_bg' bindtap='onhide'></view>
+    <view class='gs_gs_calendar_box'>
+        <view class="canlendarBgView">
+            <view class="canlendarView">
+                <view class="canlendarTopView">
+                    <view class="leftBgView" bindtap="handleCalendar" data-handle="prev">
+                        <view class="leftView"><image src='image/toleft.png'></image></view>
+                    </view>
+                    <view class="centerView">{{cur_year || "--"}} 年 {{cur_month || "--"}} 月</view>
+                    <view class="rightBgView" bindtap="handleCalendar" data-handle="next">
+                        <view class="rightView"><image src='image/toright.png'></image></view>
+                    </view>
+                </view>
+                <view class="weekBgView">
+                    <view style='width: {{ sysW }}px; height: {{ sysW }}px; line-height: {{ sysW }}px;' class="weekView" wx:for="{{weeks_ch}}" wx:key="index" data-idx="{{index}}">{{item}}</view>
+                </view>
+                <view class="dateBgView">
+                    <view wx:if="{{hasEmptyGrid}}" class="dateEmptyView" wx:for="{{empytGrids}}" wx:key="index" data-idx="{{index}}">
+                    </view>
+                    <view style='{{ index == 0 ? "margin-left:" + sysW * marLet + "px;" : "" }}width: {{ sysW }}px; height: {{ sysW }}px; line-height: {{ sysW }}px;' class="dateView" wx:for="{{days}}" wx:key="index" data-idx="{{index}}" bindtap="dateSelectAction">
+                        <!--view   class="datesView {{ item.item ==  getDate && judge==1 ? 'dateOn' : ''}}}">{{item.item}}</view-->
+                        <view   class="datesView {{ item.jdg ==1 ? 'dateOn' : ''}}}">{{item.item}}</view>
+                        <view class='clocksucceed' wx:if="{{item.src}}"><image src='{{item.src}}'></image></view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class='del' bindtap='onhide'>
+            <image src='image/cha.png'></image>
+        </view>
+    </view>
+    <view class='gs_bottom'>
+    </view>
+</view>

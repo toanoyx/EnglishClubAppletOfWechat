@@ -1,0 +1,12 @@
+<image src='{{modelimg}}' class='modelBack' ></image>
+<scroll-view class='editor_box'>
+  <view class='header'>
+    <image src='../images/goback.png' class="back" bindtap='back'></image>
+    <text class='header_text'>备忘录</text>
+  </view>
+  <form class='editor_box' data-text="{{dates}}">
+    <input placeholder='标题' name="title" class='title_inp'  value='{{title}}' bindinput="inTitle"></input>
+    <textarea placeholder='内容' name="text" class='content_text' value='{{text}}' bindinput="inText"></textarea>
+    <button class='model_btn' bindtap="savePage" >保存</button>
+  </form>
+</scroll-view>

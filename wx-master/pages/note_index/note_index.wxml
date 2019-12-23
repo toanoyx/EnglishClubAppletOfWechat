@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='header'>
+    <!-- <image src='../images/goback.png' class="backHome" bindtap='backHomePage'></image> -->
+    <!-- <text class='header_text'>记事本</text> -->
+    <image src='../images/editor.png' class='editor_icon' bindtap="editor" ></image>
+    <image src='../images/add.png' class="plus_img" bindtap="add" ></image>
+  </view>
+  <scroll-view class='some_list'>
+    <view class='list_item' wx:for="{{list}}">
+      <image 
+      data-index='{{index}}' 
+      data-src='{{item.check ? "../images/check_true.png" : "../images/check_false.png" }}' 
+      bindtap='check' 
+      src='{{item.check ? "../images/check_true.png" : "../images/check_false.png" }}' 
+      class="list_check {{chexkStatus ? 'show' : 'hide'}} "></image>
+      <navigator url="/pages/note_editor/note_editor?nid={{item.nid}}">
+        <view class='{{chexkStatus ? "list_pad" : "list_rgt"}}' data-nid="{{list.nid}}">
+        <text>{{item.nid}}dsadad</text>
+        <view class='list_time'>{{item.date}}</view>
+        <view class='list_title'>{{item.title}}</view>
+        </view>
+      </navigator>
+      
+    </view>
+  </scroll-view>
+  <view class="bottom_btn_box {{chexkStatus ? 'show' : 'hide'}} ">
+    <button class='editor_btn' bindtap='save'>完成</button>
+    <button class='delete_btn' bindtap='delHandel'>删除</button>
+  </view> 
+</view>

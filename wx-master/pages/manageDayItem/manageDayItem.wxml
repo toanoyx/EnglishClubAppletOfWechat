@@ -1,0 +1,19 @@
+<!-- pages/manageDayItem/manageDayItem.wxml -->
+<loading hidden="{{!loading}}"></loading>
+<scroll-view scroll-y="{{true}}">
+    <view>
+      <button class="uploadButton" bindtap="upLoadAction"><text>上传文件</text></button>
+      <view class="fileLabel">
+        <text wx:if="{{fileName.length}}">{{fileName}}</text>
+        <text wx:else>未上传文件</text>
+      </view>
+    </view>
+    <text>\n</text>
+    <text>\n</text>
+    <view class="label">
+        <text >签到人员名单：</text>
+    </view>
+    <view class="signInPeople" wx:for="{{signInList}}" wx:key="person">
+        <view class="item"><text>{{item}}</text></view>
+    </view>
+</scroll-view>

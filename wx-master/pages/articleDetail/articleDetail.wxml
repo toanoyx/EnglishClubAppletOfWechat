@@ -1,0 +1,22 @@
+<scroll-view scroll-y="true" scroll-top="{{ scrollTop }}" enable-back-to-top="true" class="root-wrap">
+  <view class="wrapper">
+    <view class="info">
+        <view class="info-title">{{ detailData.title }}</view>
+    </view>
+    <view class="info-line under-line"></view>
+    <!-- 增加正文视图位置  -->
+    <view class="content">
+        <text>{{ detailData.content }}</text>
+    </view>
+    <view class="footbar">
+      <form>
+        <button class="footbar-back clearBtnDefault" bindtap="back">
+          <view class="icon footbar-back-icon"></view>
+        </button>
+        <button class="footbar-share clearBtnDefault" bindtap="share" open-type="share">
+        <view class="icon footbar-share-icon"></view>
+        </button>
+      </form>
+    </view>
+  </view>
+</scroll-view> 

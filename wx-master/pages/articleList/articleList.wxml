@@ -1,0 +1,11 @@
+<view class="wrapper">
+  <view wx:for="{{ articleList }}" wx:for-item="group" wx:key="{{ group.date }}" class="group" data-id="{{group.articles.contentId}}" bindtap="showDetail">
+    <view class="group-bar">
+      <view class="group-title">{{ group.date }}</view>
+    </view>
+    <view class="group-content">
+      <view class="group-content-desc ellipsis-multi-line ellipsis-line-3">{{ group.articles.title }}</view>
+      <image mode="aspectFill" class="group-content-img" src="../images/poster.jpg" ></image>
+    </view>
+  </view>
+</view>

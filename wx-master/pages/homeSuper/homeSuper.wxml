@@ -1,0 +1,29 @@
+<!--pages/menu/menu.wxml-->
+<view class='imgClub'>
+  <image src='../../pages/images/nju.jpg' class='in-image'   >
+  </image>
+</view>
+
+<text class='title'>南京大学研究生英语俱乐部</text>
+
+<button class='btnCheck' open-type='openSetting' bindtap="goToPageCheck">
+  <image class='btnImgCheck' src='../../pages/images/check.png'></image>
+  <view>今日打卡</view>
+</button>
+
+<button class='btnRead' open-type='openSetting' bindtap="goToPageRead">
+  <image class='btnImgRead' src='../../pages/images/read.png'></image>
+  <view>晨读材料</view>
+</button>
+
+<button class='btnNote' open-type='openSetting' bindtap="goToPageNote">
+  <image class='btnImgNote' src='../../pages/images/note.png'></image>
+  <view>随笔记录</view>
+</button>
+
+<button class='btnSuper' open-type='openSetting' bindtap="goToPageManage">
+  <image class='btnImgSuper' src='../../pages/images/super.png'></image>
+  <view>管理人员</view>
+</button>
+
+<button open-type='getUserInfo' >获取授权</button>

@@ -1,0 +1,22 @@
+<!--pages/menuNormal/menuNormal.wxml-->
+<view class='imgClub'>
+  <image src='../../pages/images/nju.jpg' class='in-image'>
+  </image>
+</view>
+
+<text class='title'>南京大学英语社团</text>
+
+<button class='btnCheck' open-type='openSetting' bindtap="goToPageCheck1">
+  <image class='btnImgCheck' src='../../pages/images/check.png'></image>
+  <view>今日打卡</view>
+</button>
+
+<button class='btnRead' open-type='openSetting' bindtap="goToPageRead1">
+  <image class='btnImgRead' src='../../pages/images/read.png'></image>
+  <view>晨读材料</view>
+</button>
+
+<button class='btnNote' open-type='openSetting' bindtap="goToPageNote1">
+  <image class='btnImgNote' src='../../pages/images/note.png'></image>
+  <view>随笔记录</view>
+</button>

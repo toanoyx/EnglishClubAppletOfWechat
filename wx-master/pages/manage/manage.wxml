@@ -1,0 +1,17 @@
+<!--管理界面，用于管理员查看每天的签到的人员以及上传晨读材料-->
+<view class="container">
+  <loading hidden="{{!loading}}">数据加载中</loading>
+  <!--顶部标题栏-->
+  <view><button class="newDate" bindtap="goToNewDate"><text>新建日期</text></button></view>
+  <view class="page-header">
+    <text class="page-title">{{title}}</text>    
+  </view>
+  <!-- 列表 -->
+  <view class="page-body" wx:for="{{dayList}}" wx:key="mid">
+    <view class="item">
+      <navigator url="../manageDayItem/manageDayItem?mid={{item.mid}}">
+        <text class="itemDate">日期: {{item.uploadTime}}</text>
+      </navigator>
+    </view>
+  </view>
+</view>

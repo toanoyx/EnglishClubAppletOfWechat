@@ -1,0 +1,7 @@
+<loading hidden="{{loading}}">数据加载中</loading>
+<view>
+  <text>请输入要新建的日期：</text>
+  <input name="date" placeholder="请输入日期" value="{{date}}" bindinput="dateInput"/>
+  <button bindtap="ensureBtnClick"><text >确定</text></button>
+  <button bindtap="cancelBtnClick"><text >取消</text></button>
+</view>
